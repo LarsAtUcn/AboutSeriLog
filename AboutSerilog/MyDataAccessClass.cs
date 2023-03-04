@@ -21,7 +21,7 @@ namespace AboutSerilog {
                     SqlCommand execSqlStatement = new SqlCommand(queryString, connection);
                     SqlDataReader foundRecords = execSqlStatement.ExecuteReader();
                     if (foundRecords.HasRows) {
-                        bool isNotNull;
+                        bool isNotNull;     // Test for null values in minit field
                         string fNam, mIni, lNam;
                         Console.WriteLine("Employees:");
                         while (foundRecords.Read()) {
