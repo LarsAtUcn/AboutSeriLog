@@ -1,12 +1,13 @@
 ﻿using Serilog;
+using Serilog.Core;
 using System.Data.SqlClient;
 
-namespace AboutSerilog {
-    public class MyDataAccessClass {
+namespace AboutSerilog2 {
+    internal class MyDataAccessClass2 {
 
         private readonly ILogger _logger;
 
-        public MyDataAccessClass(ILogger logger) {
+        public MyDataAccessClass2(ILogger logger) {
             _logger = logger;
         }
 
@@ -48,7 +49,8 @@ namespace AboutSerilog {
                         .Error(ex, "Error performing database access");
                 }
             }
-            ((IDisposable)_logger).Dispose();   // Triggers flush
+    ((IDisposable)_logger).Dispose();
         }
+
     }
 }
